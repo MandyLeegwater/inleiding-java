@@ -2,36 +2,102 @@ package h08;
 
 import java.applet.Applet;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class praktijkopdracht8 extends Applet {
-    TextField tekstvak;
-    TextField tekstvak1;
-    Button button;
-    Button button1;
-    Button button2;
-    Button button3;
-    Button button4;
-    double waarde1;
-    double waarde2;
-    double waarde3;
+    TextField imput1;
+    TextField imput2;
+    Button Keer;
+    Button Deel;
+    Button Plus;
+    Button Min;
 
-    public void init(){
-        tekstvak=new TextField();
-        tekstvak1=new TextField();
-        button=new Button("+");
-        button1=new Button("-");
-        button2=new Button("/");
-        button3=new Button("*");
-        button4=new Button("reset");
-        add(tekstvak);
-        add(tekstvak1);
-        add(button);
-        add(button1);
-        add(button2);
-        add(button3);
-        add(button4);
+    Double Getal1;
+    Double Getal2;
+
+
+    public void init() {
+        super.init();
+        setSize(500,200);
+
+        imput1 = new TextField("", 20);
+        add(imput1);
+
+        imput2 = new TextField("", 20);
+        add(imput2);
+
+        Keer = new Button("X");
+        KeerListener keerListener = new KeerListener();
+        Keer.addActionListener(keerListener);
+        add(Keer);
+
+        Deel = new Button("/");
+        Deellistener deellistener = new Deellistener();
+        Deel.addActionListener(deellistener);
+        add(Deel);
+
+        Plus = new Button("+");
+        Pluslistener pluslistener = new Pluslistener();
+        Plus.addActionListener(pluslistener);
+        add(Plus);
+
+        Min = new Button("-");
+        Minlistener minlistener = new Minlistener();
+        Min.addActionListener(minlistener);
+        add(Min);
     }
-    public void paint(Graphics g){
 
+    class KeerListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            String arg1 = imput1.getText();
+            Getal1 = Double.parseDouble(arg1);
+
+            String arg2 = imput2.getText();
+            Getal2 = Double.parseDouble(arg2);
+
+            Double uitkomstKeer = Getal1 * Getal2;
+            imput1.setText("" + uitkomstKeer);
+            imput2.setText(" ");
+        }
+    }
+    class Deellistener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            String arg1 = imput1.getText();
+            Getal1 = Double.parseDouble(arg1);
+
+            String arg2 = imput2.getText();
+            Getal2 = Double.parseDouble(arg2);
+
+            Double uitkomstDeel = Getal1 / Getal2;
+            imput1.setText("" + uitkomstDeel);
+            imput2.setText(" ");
+        }
+    }
+    class Pluslistener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            String arg1 = imput1.getText();
+            Getal1 = Double.parseDouble(arg1);
+
+            String arg2 = imput2.getText();
+            Getal2 = Double.parseDouble(arg2);
+
+            Double uitkomstPlus = Getal1 + Getal2;
+            imput1.setText("" + uitkomstPlus);
+            imput2.setText(" ");
+        }
+    }
+    class Minlistener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            String arg1 = imput1.getText();
+            Getal1 = Double.parseDouble(arg1);
+
+            String arg2 = imput2.getText();
+            Getal2 = Double.parseDouble(arg2);
+
+            Double uitkomstMin = Getal1 - Getal2;
+            imput1.setText("" + uitkomstMin);
+            imput2.setText(" ");
+        }
     }
 }
