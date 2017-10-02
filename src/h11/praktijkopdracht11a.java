@@ -28,7 +28,7 @@ public class praktijkopdracht11a extends Applet {
             for (i = 0; i<10;){
                 y = y+20;
                 i++;
-                g.drawString(i+"x"+tafelinput+"="+tafelinput*1,x,y);
+                g.drawString(i+"x"+tafelinput+"="+tafelinput*i,x,y);
             }
         }
 
