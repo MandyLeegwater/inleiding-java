@@ -7,12 +7,12 @@ import java.awt.event.ActionListener;
 
 public class HoogsteGetal extends Applet {
 
-    long getal2;
-    long getal1;
+    long invoergetal;
+    long hoogstegetal;
     TextField tekstvak;
     Label label;
     String tekst;
-    long cijfer3;
+    long laagstegetal;
 
     public void init() {
         tekstvak = new TextField("", 5);
@@ -26,23 +26,23 @@ public class HoogsteGetal extends Applet {
     }
 
     public void paint(Graphics g) {
-        g.drawString("Het hoogste getal =" + getal1, 50, 45);
-        g.drawString("Het laagste getal =" + cijfer3, 50, 55);
+        g.drawString("Het hoogste getal =" + hoogstegetal, 50, 45);
+        g.drawString("Het laagste getal =" + laagstegetal, 50, 55);
     }
 
     class VakListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            getal2 = Long.parseLong(tekstvak.getText());
+            invoergetal = Long.parseLong(tekstvak.getText());
             repaint();
-            if (cijfer3 == 0) {
-                cijfer3 = getal2;
+            if (laagstegetal == 0) {
+                laagstegetal = invoergetal;
             }
-            if (getal2 > getal1) {
-                getal1 = getal2;
+            if (invoergetal > hoogstegetal) {
+                hoogstegetal = invoergetal;
                 tekstvak.setText(null);
             }
-            if (getal2 < cijfer3) {
-                cijfer3 = getal2;
+            if (invoergetal < laagstegetal) {
+                laagstegetal = invoergetal;
             }
             tekstvak.setText(null);
             repaint();
