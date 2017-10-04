@@ -36,7 +36,7 @@ public class praktijkopdracht11a extends Applet {
                 g.drawString(i + "x" + tafelinput + "=" + tafelinput * i, x, y);
             }
         }
-        
+
 
     }
 
