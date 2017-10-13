@@ -21,7 +21,6 @@ public class Wereldtijden extends Applet {
     }
 
     public void paint(Graphics g) {
-
         int x = 10;
         int y = 50;
         if (tijd < 24) {

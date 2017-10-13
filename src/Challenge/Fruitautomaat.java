@@ -80,16 +80,16 @@ public class Fruitautomaat extends Applet {
         }
     }
 
-
     private void slots(Graphics g) {
         afbeelding1 = getImage(pad, ""+ afbeelding[nummer1]);
         afbeelding2 = getImage(pad, ""+ afbeelding[nummer2]);
         afbeelding3 = getImage(pad, ""+ afbeelding[nummer3]);
 
 
-        g.drawImage(afbeelding1, 20, 40, 80, 160, this);
-        g.drawImage(afbeelding2, 100, 40, 80, 160, this);
-        g.drawImage(afbeelding3, 180, 40, 80, 160, this);
+        int x = 80;
+        int y = 160;
+        g.drawImage(afbeelding2, 100, 40, x, y, this);
+        g.drawImage(afbeelding3, 180, 40, x, y, this);
 
         if (nummer1 == nummer2 && begin ||nummer2 == nummer3 && begin ||nummer1 == nummer3 && begin) {
             krediet = krediet + 4;
@@ -102,10 +102,10 @@ public class Fruitautomaat extends Applet {
         if (krediet < 1) {
             koop.setEnabled(true);
             speel.setEnabled(false);
-
         }
         else {
             koop.setEnabled(false);
+            speel.setEnabled(true);
         }
     }
 }

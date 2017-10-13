@@ -15,17 +15,17 @@ public class Staafdiagram extends Applet {
 
     public void init() {
         setSize(500, 500);
-
+        //Valerie
         Label labelValerie = new Label("Valerie");
         add(labelValerie);
         TekstvakValerie = new TextField("", 7);
         add(TekstvakValerie);
-
+        //Jeroen
         Label labelJeroen = new Label("Jeroen");
         add(labelJeroen);
         TekstvakJeroen = new TextField("", 7);
         add(TekstvakJeroen);
-
+        //Hans
         Label labelHans = new Label("Hans");
         add(labelHans);
         TekstvakHans = new TextField("", 7);
